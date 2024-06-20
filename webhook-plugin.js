@@ -15,6 +15,9 @@ exports.hook_data_post = async function (next, connection) {
         if (data.type === 'text') {
             content = data.textAsHtml
         }
+        if (data.type === 'attachment') { 
+            connection.loginfo(data)
+        }
         let emailData = {
             from: transaction.mail_from.address(),
             to: transaction.rcpt_to.map(rcpt => rcpt.address()),
