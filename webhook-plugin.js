@@ -18,6 +18,8 @@ exports.hook_data_post = async function (next, connection) {
         if (data.type === 'attachment') {
             connection.loginfo(data)
         }
+    })
+    parser.on("end", function () {
         let emailData = {
             from: transaction.mail_from.address(),
             to: transaction.rcpt_to.map(rcpt => rcpt.address()),
