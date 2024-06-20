@@ -15,7 +15,7 @@ exports.hook_data_post = async function (next, connection) {
         if (data.type === 'text') {
             content = data.textAsHtml
         }
-        if (data.type === 'attachment') { 
+        if (data.type === 'attachment') {
             connection.loginfo(data)
         }
         let emailData = {
@@ -24,7 +24,7 @@ exports.hook_data_post = async function (next, connection) {
             subject: transaction.header.get('subject'),
             body: content,
         };
-        this.loginfo(emailData);
+        connection.loginfo(emailData);
         axios.post('http://localhost:3000/email', emailData, {
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ exports.hook_data_post = async function (next, connection) {
         }
         ).catch((err) => connection.loginfo("-------------------not OK--------------------"))
     })
-    
+
 
     next()
 }
