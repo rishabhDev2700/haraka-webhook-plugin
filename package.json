@@ -1,0 +1,27 @@
+{
+  "name": "haraka-webhook-plugin",
+  "version": "1.0.0",
+  "description": "send mail received by haraka to a http endpoint",
+  "main": "webhook-plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishabhDev2700/haraka-webhook-plugin.git"
+  },
+  "keywords": [
+    "haraka",
+    "plugin"
+  ],
+  "author": "rishabhdev2700",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rishabhDev2700/haraka-webhook-plugin/issues"
+  },
+  "homepage": "https://github.com/rishabhDev2700/haraka-webhook-plugin#readme",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "mailparser": "^3.7.1"
+  }
+}
